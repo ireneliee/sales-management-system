@@ -108,7 +108,7 @@ const CreateNewTrip = () => {
         setRevenue(0);
         setNewCustomer(0);
         setDestination('');
-        setGmail('');
+        setGmail(user.email);
     }
 
     const submitNewTrip = async () => {

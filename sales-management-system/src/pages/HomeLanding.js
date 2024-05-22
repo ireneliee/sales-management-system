@@ -11,7 +11,8 @@ const HomeLanding = () => {
     if (roleLoading) return <p>Loading...</p>;
     if (roleError) return (
         <div>
-            <p>Your account has yet to be associated with any roles. Please contact the administrator.</p>;
+            <p>Your account has yet to be associated with any roles. Please contact the administrator.</p>
+            <SignOut/>
         </div>)
 
 

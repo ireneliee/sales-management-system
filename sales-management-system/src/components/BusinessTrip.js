@@ -10,6 +10,12 @@ const BusinessTrip = ({ salesGmail, onMessageChange }) => {
     // loading of users list
     const [trips, setTrips] = useState([]);
 
+    const [fetchTrigger, setFetchTrigger] = useState(false);
+
+    const triggerRefreshTrips = () => {
+        setFetchTrigger(!fetchTrigger);
+    }
+    
     useEffect(() => {
         if (salesGmail) {
             const fetchTrips = async () => {
@@ -23,7 +29,7 @@ const BusinessTrip = ({ salesGmail, onMessageChange }) => {
             fetchTrips();
         }
 
-    }, []); // Add fetchTrigger as a dependency
+    }, [fetchTrigger]); // Add fetchTrigger as a dependency
 
     // deletion functionality
     const [selectedTrip, setSelectedTrips] = useState([]);
@@ -33,18 +39,22 @@ const BusinessTrip = ({ salesGmail, onMessageChange }) => {
         setSelectedTrips(selectedRowsData);
     };
 
+    
+
     const handleDeleteTrips = async () => {
         try {
             for (var i = 0; i < selectedTrip.length; i++) {
                 var id = selectedTrip[i].id;
                 await TripService.deleteTrip(id);
-                setTrips(trips.filter(trip => trip.id !== id));
             }
+            triggerRefreshTrips();
             onMessageChange("Berhasil menghapus data perjalanan bisnis!")
         } catch (error) {
             onMessageChange("Terjadi error dalam menghapus data perjalanan bisnis!")
         }
     };
+
+    
 
     // data table
     const columns = [
