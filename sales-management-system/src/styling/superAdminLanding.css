@@ -1,0 +1,22 @@
+.super-admin-landing {
+    text-align: center;
+    align-items: center;
+}
+
+.super-admin-action-panel {
+    height: 20vh;
+}
+
+.super-admin-landing-header {
+    text-align: right;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.super-admin-action-pic {
+    width: 15%;
+}
+
+.super-admin-action-item {
+    margin: 3rem;
+}

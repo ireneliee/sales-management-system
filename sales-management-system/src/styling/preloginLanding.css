@@ -1,0 +1,16 @@
+.pre-login-landing-page {
+    text-align: center;
+    align-items: center;
+}
+
+.pre-login-landing-header {
+    margin-top: 15vh;
+}
+
+#landing-page-pic {
+    height: 60vh;
+}
+
+.pre-login-landing-content {
+    margin-top: 5rem;
+}
