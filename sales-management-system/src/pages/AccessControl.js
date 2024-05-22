@@ -51,7 +51,7 @@ const AccessControl = () => {
     const [chosenRole, setChosenRole] = useState('SALES'); // State untuk menyimpan nilai peran
 
     const handleRoleChange = (event) => {
-        setChosenRole(event.target.value); // Mengupdate state ketika nilai berubah
+        setChosenRole(event.target.value); 
     };
 
     // snackbar message
@@ -172,7 +172,7 @@ const AccessControl = () => {
                                             //email , chosenRole
                                             const newUser = {
                                                 gmail: email,
-                                                role: role
+                                                role: chosenRole
                                             };
 
                                             try {

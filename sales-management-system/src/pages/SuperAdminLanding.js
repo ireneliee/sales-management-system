@@ -14,6 +14,14 @@ const SuperAdminLanding = () => {
     const goToBusinessTripPage = () => {
         navigate('/businessTrip');
     };
+
+    const goToPasscodeChangePage = () => {
+        navigate('/passcodeChange');
+    };
+    const goToNewBusinessTripPage = () => {
+        navigate('/newBusinessTrip');
+    };
+
     return (
         <div className="super-admin-landing">
             <div className="super-admin-landing-header">
@@ -31,13 +39,19 @@ const SuperAdminLanding = () => {
                 <div className="super-admin-action-item">
                     <img className="super-admin-action-pic" id="business-trip-pic" src="/images/business-trip.png" alt="perjalanan bisnis" />
                     <br />
-                    <Button onClick= {goToBusinessTripPage}>Perjalanan bisnis</Button>
+                    <Button onClick= {goToBusinessTripPage}> Lihat perjalanan bisnis</Button>
+                </div>
+                <div className="super-admin-action-item">
+                    <img className="super-admin-action-pic" id="new-business-trip-pic" src="/images/business-trip-2.png" alt="perjalanan bisnis baru" />
+                    <br />
+                    <Button onClick= {goToNewBusinessTripPage}>Buat perjalanan bisnis baru</Button>
                 </div>
                 <div className="super-admin-action-item">
                     <img className="super-admin-action-pic" id="passcode-pic" src="/images/password.png" alt="passcode" />
                     <br />
-                    <Button onClick= {goToBusinessTripPage}>Ganti passcode</Button>
+                    <Button onClick= {goToPasscodeChangePage}>Ganti passcode</Button>
                 </div>
+                
             </div>
         </div>
 

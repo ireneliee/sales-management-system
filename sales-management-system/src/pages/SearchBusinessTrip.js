@@ -62,7 +62,17 @@ const SearchBusinessTrip = () => {
         };
 
         fetchSales();
-    }, []);
+    });
+
+    useEffect(() => {
+        const fetchSalesData = async () => {
+            if (role === "SALES" && user) {
+                setGmailChosen(user.email);
+                setAuthenticated(true);
+            }
+        };
+        fetchSalesData();
+    }, [user]);
 
     // handle sales gmail change
     const [gmailChosen, setGmailChosen] = useState('');
@@ -82,6 +92,11 @@ const SearchBusinessTrip = () => {
                 return
             }
             const result = await UserService.authenticateNonAdmin(supervisorGmail, supervisorPasscode);
+            setSupervisorGmail('');
+            setSupervisorPasscode('');
+            if (result == false) {
+                showMessage("Kredensial supervisor salah!")
+            }
             setAuthenticated(result);
         }
     }
@@ -97,13 +112,13 @@ const SearchBusinessTrip = () => {
         <div>
             {user ? (
                 <div className='business-trip-container'>
-                    <Button variant="contained" startIcon={<ArrowBackIcon />} onClick = {goToLandingPage}>
-                        Kembali 
+                    <Button variant="contained" startIcon={<ArrowBackIcon />} onClick={goToLandingPage}>
+                        Kembali
                     </Button>
                     <div className="business-trip-search-header">
                         <h1>Perjalanan Bisnis</h1>
                     </div>
-                    {role !== 'SUPERADMIN' ? (
+                    {role === 'ADMIN' ? (
                         <div className='non-superadmin-container'>
                             <Card className="supervisor-access-panel panel">
                                 <p>Untuk mengakses fitur ini, silakan masukkan kredensial supervisor.</p>
@@ -136,7 +151,8 @@ const SearchBusinessTrip = () => {
                         <></>
                     )
                     }
-                    <Card className="seach-business-trip-panel panel">
+                    {role === 'SUPERADMIN' || role === 'ADMIN' ? (
+                        <Card className="seach-business-trip-panel panel">
                         <div className="search-trip-form">
                             <FormControl fullWidth>
                                 <InputLabel id="search-business-trip-by-gmail-label">Sales' Gmail</InputLabel>
@@ -158,6 +174,9 @@ const SearchBusinessTrip = () => {
 
                         </div>
                     </Card>
+                    ):(
+                        <></>
+                    )}
                     {
                         (authenticated && (gmailChosen !== '')) ? (
                             <div className="sales-trip-table">

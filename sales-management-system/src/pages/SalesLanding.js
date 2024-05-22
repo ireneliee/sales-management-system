@@ -4,12 +4,13 @@ import '../styling/superAdminLanding.css';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const AdminLanding = () => {
+const SalesLanding = () => {
     const navigate = useNavigate();
 
     const goToBusinessTripPage = () => {
         navigate('/businessTrip');
     };
+
     const goToNewBusinessTripPage = () => {
         navigate('/newBusinessTrip');
     };
@@ -26,7 +27,7 @@ const AdminLanding = () => {
                 <div className="super-admin-action-item">
                     <img className="super-admin-action-pic" id="business-trip-pic" src="/images/business-trip.png" alt="perjalanan bisnis" />
                     <br />
-                    <Button onClick= {goToBusinessTripPage}> Lihat perjalanan bisnis</Button>
+                    <Button onClick= {goToBusinessTripPage}> Lihat perjalanan bisnis anda</Button>
                 </div>
                 <div className="super-admin-action-item">
                     <img className="super-admin-action-pic" id="new-business-trip-pic" src="/images/business-trip-2.png" alt="perjalanan bisnis baru" />
@@ -40,4 +41,4 @@ const AdminLanding = () => {
     );
 };
 
-export default AdminLanding;
+export default SalesLanding;

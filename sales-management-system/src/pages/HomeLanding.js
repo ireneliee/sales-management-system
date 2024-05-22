@@ -3,6 +3,8 @@ import { useAuth } from '../AuthContext';
 import PreloginLanding from './PreloginLanding';
 import SuperAdminLanding from './SuperAdminLanding';
 import SignOut from '../components/SignOut';
+import AdminLanding from './AdminLanding';
+import SalesLanding from './SalesLanding';
 const HomeLanding = () => {
     const { user, role, roleLoading, roleError } = useAuth();
 
@@ -20,10 +22,17 @@ const HomeLanding = () => {
                     {role === 'SUPERADMIN' ? (
                         <SuperAdminLanding />
                     ) : (
-                        <div>
-                            <p>You do not have the required role.</p>
-                            <SignOut></SignOut>
-                        </div>
+                        <></>
+                    )}
+                    {role === 'ADMIN' ? (
+                        <AdminLanding/>
+                    ) : (
+                        <></>
+                    )}
+                    {role === 'SALES' ? (
+                        <SalesLanding/>
+                    ) : (
+                        <></>
                     )}
                 </>
             ) : (

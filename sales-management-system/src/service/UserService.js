@@ -41,9 +41,20 @@ const UserService = {
     await deleteDoc(userDoc);
   },
 
+  // very unsafe, but I don't have a backend
   async authenticateNonAdmin(gmail, code) {
-    // TODO: add this logic later
-    return true;
+    try {
+      const user = await this.getUserByGmail(gmail);
+      if (user.passcode == code) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (err) {
+      return false;
+    }
+
+
   }
 };
 

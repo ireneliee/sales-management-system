@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TripService from '../service/TripService';
 import { DataGrid } from '@mui/x-data-grid';
-
+import Button from '@mui/material/Button';
 
 // this will be protected resources, can only be opened when its super admin, or admin that has keyed in supervisor key
 
@@ -25,7 +25,26 @@ const BusinessTrip = ({ salesGmail, onMessageChange }) => {
 
     }, []); // Add fetchTrigger as a dependency
 
+    // deletion functionality
+    const [selectedTrip, setSelectedTrips] = useState([]);
 
+    const onRowsSelectionHandler = (ids) => {
+        const selectedRowsData = ids.map((id) => trips.find((row) => row.id === id));
+        setSelectedTrips(selectedRowsData);
+    };
+
+    const handleDeleteTrips = async () => {
+        try {
+            for (var i = 0; i < selectedTrip.length; i++) {
+                var id = selectedTrip[i].id;
+                await TripService.deleteTrip(id);
+                setTrips(trips.filter(trip => trip.id !== id));
+            }
+            onMessageChange("Berhasil menghapus data perjalanan bisnis!")
+        } catch (error) {
+            onMessageChange("Terjadi error dalam menghapus data perjalanan bisnis!")
+        }
+    };
 
     // data table
     const columns = [
@@ -93,7 +112,12 @@ const BusinessTrip = ({ salesGmail, onMessageChange }) => {
                     }}
                     pageSizeOptions={[5, 10]}
                     checkboxSelection
+                    onRowSelectionModelChange = {(ids) => onRowsSelectionHandler(ids)}
+
                 />
+                <br/>
+                <Button variant = "contained" onClick={() => handleDeleteTrips()}>Hapus</Button>
+                
             </div>
 
         </div>

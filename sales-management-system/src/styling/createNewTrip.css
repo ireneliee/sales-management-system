@@ -1,0 +1,13 @@
+.create-new-trip-container {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.new-trip-field {
+    margin: 1rem;
+}
+.new-trip-submit {
+    margin: 1rem;
+}
+.create-new-trip-form {
+    width: 70vw;
+}
