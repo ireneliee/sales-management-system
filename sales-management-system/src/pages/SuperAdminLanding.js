@@ -32,26 +32,21 @@ const SuperAdminLanding = () => {
             </div>
             <div className="super-admin-action-panel">
                 <div className="super-admin-action-item">
-                    <img className="super-admin-action-pic" id="access-control-pic" src="/images/easy-access.png" alt="kontrol akses" />
-                    <br />
-                    <Button onClick = {goToAccessControlPage} >Kontrol akses</Button>
+                    <Button onClick={goToAccessControlPage} >
+                        <img className="super-admin-action-pic" id="access-control-pic" src="/images/easy-access.png" alt="kontrol akses" />Kontrol akses</Button>
                 </div>
                 <div className="super-admin-action-item">
-                    <img className="super-admin-action-pic" id="business-trip-pic" src="/images/business-trip.png" alt="perjalanan bisnis" />
-                    <br />
-                    <Button onClick= {goToBusinessTripPage}> Lihat perjalanan bisnis</Button>
+                    <Button onClick={goToBusinessTripPage}>
+                        <img className="super-admin-action-pic" id="business-trip-pic" src="/images/business-trip.png" alt="perjalanan bisnis" />Lihat perjalanan bisnis</Button>
                 </div>
                 <div className="super-admin-action-item">
-                    <img className="super-admin-action-pic" id="new-business-trip-pic" src="/images/business-trip-2.png" alt="perjalanan bisnis baru" />
-                    <br />
-                    <Button onClick= {goToNewBusinessTripPage}>Buat perjalanan bisnis baru</Button>
+                    <Button onClick={goToNewBusinessTripPage}><img className="super-admin-action-pic" id="new-business-trip-pic" src="/images/business-trip-2.png" alt="perjalanan bisnis baru" />Buat perjalanan bisnis baru</Button>
                 </div>
                 <div className="super-admin-action-item">
-                    <img className="super-admin-action-pic" id="passcode-pic" src="/images/password.png" alt="passcode" />
-                    <br />
-                    <Button onClick= {goToPasscodeChangePage}>Ganti passcode</Button>
+                    <Button onClick={goToPasscodeChangePage}>
+                        <img className="super-admin-action-pic" id="passcode-pic" src="/images/password.png" alt="passcode" />Ganti passcode</Button>
                 </div>
-                
+
             </div>
         </div>
 

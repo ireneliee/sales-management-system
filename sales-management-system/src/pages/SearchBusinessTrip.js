@@ -62,7 +62,7 @@ const SearchBusinessTrip = () => {
         };
 
         fetchSales();
-    });
+    }, []);
 
     useEffect(() => {
         const fetchSalesData = async () => {

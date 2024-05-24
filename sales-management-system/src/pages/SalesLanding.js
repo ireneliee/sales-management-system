@@ -25,14 +25,11 @@ const SalesLanding = () => {
             </div>
             <div className="super-admin-action-panel">
                 <div className="super-admin-action-item">
-                    <img className="super-admin-action-pic" id="business-trip-pic" src="/images/business-trip.png" alt="perjalanan bisnis" />
-                    <br />
-                    <Button onClick= {goToBusinessTripPage}> Lihat perjalanan bisnis anda</Button>
+                    <Button onClick= {goToBusinessTripPage}> <img className="super-admin-action-pic" id="business-trip-pic" src="/images/business-trip.png" alt="perjalanan bisnis" />
+                    Lihat perjalanan bisnis anda</Button>
                 </div>
                 <div className="super-admin-action-item">
-                    <img className="super-admin-action-pic" id="new-business-trip-pic" src="/images/business-trip-2.png" alt="perjalanan bisnis baru" />
-                    <br />
-                    <Button onClick= {goToNewBusinessTripPage}>Buat perjalanan bisnis baru</Button>
+                    <Button onClick= {goToNewBusinessTripPage}><img className="super-admin-action-pic" id="new-business-trip-pic" src="/images/business-trip-2.png" alt="perjalanan bisnis baru" />Buat perjalanan bisnis baru</Button>
                 </div>
                 
             </div>

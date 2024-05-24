@@ -51,7 +51,7 @@ const AccessControl = () => {
     const [chosenRole, setChosenRole] = useState('SALES'); // State untuk menyimpan nilai peran
 
     const handleRoleChange = (event) => {
-        setChosenRole(event.target.value); 
+        setChosenRole(event.target.value);
     };
 
     // snackbar message
@@ -122,7 +122,9 @@ const AccessControl = () => {
                                 <h1>Daftar Akses</h1>
                             </div>
                             <Stack className="status-stack" direction="row" spacing={1}>
-                                <Button variant="contained" startIcon={<AddIcon />} onClick={handleOpenCreate}>Buat akun baru</Button>
+                                <div className = "show-in-big"><Button variant="contained" startIcon={<AddIcon />} onClick={handleOpenCreate}>Buat akun baru</Button></div>
+                                <div className = "show-in-mobile"><Button variant="contained" startIcon={<AddIcon />} onClick={handleOpenCreate}>Buat</Button></div>
+
                                 <Chip label="SUPERADMIN" color="error" />
                                 <Chip label="ADMIN" color="warning" />
                                 <Chip label="SALES" color="success" />

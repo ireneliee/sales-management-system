@@ -26,12 +26,12 @@ const AdminLanding = () => {
                 <div className="super-admin-action-item">
                     <img className="super-admin-action-pic" id="business-trip-pic" src="/images/business-trip.png" alt="perjalanan bisnis" />
                     <br />
-                    <Button onClick= {goToBusinessTripPage}> Lihat perjalanan bisnis</Button>
+                    <Button onClick= {goToBusinessTripPage}> <img className="super-admin-action-pic" id="passcode-pic" src="/images/password.png" alt="passcode" />Lihat perjalanan bisnis</Button>
                 </div>
                 <div className="super-admin-action-item">
-                    <img className="super-admin-action-pic" id="new-business-trip-pic" src="/images/business-trip-2.png" alt="perjalanan bisnis baru" />
+                    
                     <br />
-                    <Button onClick= {goToNewBusinessTripPage}>Buat perjalanan bisnis baru</Button>
+                    <Button onClick= {goToNewBusinessTripPage}><img className="super-admin-action-pic" id="new-business-trip-pic" src="/images/business-trip-2.png" alt="perjalanan bisnis baru" />Buat perjalanan bisnis baru</Button>
                 </div>
                 
             </div>

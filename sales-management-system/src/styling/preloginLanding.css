@@ -5,12 +5,41 @@
 
 .pre-login-landing-header {
     margin-top: 15vh;
+    align-items: center;
 }
 
 #landing-page-pic {
     height: 60vh;
 }
 
-.pre-login-landing-content {
-    margin-top: 5rem;
+.show-in-mobile {
+    display: none;
+}
+
+.show-in-big-screen {
+    display: none;
+}
+
+/* Styles for phone screens (max width of 600px) */
+@media only screen and (max-width: 600px) {
+    .show-in-mobile {
+        display: flex;
+        align-items: center;
+    }
+    #landing-page-pic-mobile {
+        width: 100vw;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .show-in-big-screen {
+        display: inline;
+    }
+
+    #landing-page-pic-big {
+        width: 60vw;
+    }
+    .pre-login-landing-content {
+        margin-top: 3rem;
+    }
 }
